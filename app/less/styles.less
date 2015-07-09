@@ -1,0 +1,162 @@
+*{
+
+    margin: 0;
+    padding: 0;
+}
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+body{
+    font-family: 'bariol_regularregular';
+    width: 100%;
+    height: 100%;
+    color:#333;
+    background-color: #fff;
+}
+
+@light-blue:#7ec2cf;
+@dark-blue:#6dabb4;
+@grey:#434a53;
+@light-grey:#c5c4c4;
+@white:#ffffff;
+
+h1{
+    width: 85%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-family: 'bariol_regularregular';
+    font-weight: 200;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    margin-top:5px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(67,74,84,0.4);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+    margin-top: 5px;
+}
+
+.clear{
+    clear: both;
+}
+
+#login{
+    width:100%;
+    height:30px;
+    background-color: #434a53;
+    .login{
+        margin: auto;
+        margin-right: 7%;
+        padding-top: 5px;
+    }
+    a{
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 100;
+        float: right;
+        text-align: right;
+    }
+}
+
+.collapse{
+    .account{
+        float: right;
+        text-align: right;
+        width: 45%;
+        a{
+            text-decoration: none;
+            color:#434a53;
+        }
+        a:hover{
+            text-decoration: none;
+            color:#7ec2cf;
+        }
+        .name_account{
+            float: right;
+            margin: 15px 20px 0 0;
+        }
+        .photo_account{
+            img{
+                width: 40px;
+                border-radius: 20px;
+                float: right;
+                margin: 5px 20px 0 0;
+            }
+        }
+        .logout{
+            float: right;
+            margin: 5px 0 0 0;
+        }
+    }
+}
+/*==============================PROFILE==============================*/
+
+#container{
+    margin-bottom: 200px;
+}
+
+#container{
+  width: 1100px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+#profile_infos{
+  width: 1100px;
+  height: 190px;
+  margin: auto;
+  padding-top: 20px;
+  color: @grey;
+  .profile_infos{
+    width: 1100px;
+    margin: auto;
+    padding: 0 50px;
+    .profile_pic{
+      float: left;
+      img{
+        width: 150px;
+        border-radius: 75px;
+      }
+    }
+    .personnal_infos{
+      float: left;
+      padding-left: 5%;
+    }
+    .name{
+      font-family: 'bariol_lightlight';
+      text-transform: uppercase;
+      font-size: 32px;
+    }
+    .school{
+      font-family: 'bariol_lightlight';
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+  }
+}
+
+
+
+.gallery_title{
+    font-size: 28px;
+    font-family: 'bariol_lightlight';
+    text-transform: uppercase;
+}
+
+.col-md-3{
+    position: relative;
+    min-height: 1px;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+}
+
+
+

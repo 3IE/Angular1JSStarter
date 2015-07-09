@@ -1,0 +1,21 @@
+<ng-include src="'views/navBar.html'"></ng-include>
+<div id="profile_infos">
+    <div class="profile_infos">
+        <div class="profile_pic">
+            <img src="img/workForIt.jpg">
+        </div>
+
+        <div class="personnal_infos">
+            <div class="name">{{name}}</div>
+            <div class="email">{{description}}</div>
+            <br/>
+            <div class="school">Schools:</div>
+                <div class="email" ng-repeat="school in schools" >
+                    {{school.name}}
+                </div>
+        </div>
+
+    </div>
+</div>
+
+

@@ -10,11 +10,29 @@ var app = angular.module('starterKit', [
     'ui.bootstrap',
     'ngSanitize',
     'starterKitAppSDK',
-    'ui.utils'
+    'ui.utils',
+    'angular-google-analytics'
 ]);
 
-app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', 'AnalyticsProvider', function ($stateProvider, $urlRouterProvider, AnalyticsProvider) {
         $urlRouterProvider.otherwise("/");
+
+        AnalyticsProvider.setAccount([
+            {
+                tracker: 'UA-12345-12',
+                name: "tracker1",
+                cookieConfig: {
+                    cookieDomain: 'foo.example.com',
+                    cookieName: 'myNewName',
+                    cookieExpires: 20000
+                },
+                crossDomainLinker: true,
+                crossLinkDomains: ['domain-1.com', 'domain-2.com'],
+                trackEvent: true,
+                trackEcommerce: true
+            }
+        ]);
+
 
         $stateProvider
             .state('home', {

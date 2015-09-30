@@ -1,24 +1,24 @@
 {
   "name": "StarterKit",
   "description": "Javascript Web starterKit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "",
   "license": "",
   "private": true,
   "dependencies": {
-    "angular": "~1.4.4",
-    "jquery": "~2.1.4",
-    "angular-mocks": "~1.4.4",
-    "angular-bootstrap": "~0.13.3",
-    "angular-ui-router": "~0.2.15",
-    "bootstrap": "~3.3.5",
-    "less": "~2.5.1",
-    "ui-utils": "~3.0.0",
-    "angular-ui-utils": "~3.0.0",
-    "angular-sanitize": "~1.4.4",
-    "angular-google-analytics": "~1.0.0"
+    "angular": "1.4.x",
+    "jquery": "2.1.x",
+    "angular-mocks": "1.4.x",
+    "angular-bootstrap": "0.13.x",
+    "angular-ui-router": "0.2.x",
+    "bootstrap": "3.3.x",
+    "less": "2.5.x",
+    "ui-utils": "3.0.x",
+    "angular-ui-utils": "3.0.x",
+    "angular-sanitize": "1.4.x",
+    "angular-google-analytics": "1.0.x"
   },
   "resolutions": {
-    "angular": "~1.4.4"
+    "angular": "1.4.x"
   }
 }

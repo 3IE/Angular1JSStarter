@@ -19,7 +19,7 @@ describe("Controller: Home page", function () {
 
     it('should contain a list of images', function() {
 
-        expect(scope.images[0]).toBe("IMG-1");
+        expect(scope.images[0]).toBe("happy1");
 
     });
 });

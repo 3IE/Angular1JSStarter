@@ -20,6 +20,7 @@ angular.module('starterKit').
                     return data;
                 });
         };
+        $scope.images = ["happy1", "happy2"];
 
 
     }]);

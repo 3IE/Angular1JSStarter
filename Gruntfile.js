@@ -21,6 +21,7 @@ module.exports = function (grunt) {
     var path = require('path');
 
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
         globals: {
             releasePath: 'build/release',
             debugPath: 'build/debug',
@@ -31,6 +32,20 @@ module.exports = function (grunt) {
                 'fonts/**',
                 '*.json'
             ]
+        },
+        coverage: {
+            default: {
+                options: {
+                    thresholds: {
+                        'statements': 90,
+                        'branches': 90,
+                        'lines': 90,
+                        'functions': 90
+                    },
+                    dir: 'coverage/<%= globals.appFolder %>',
+                    root: 'test'
+                }
+            }
         },
         useminPrepare: {
             release: '<%= globals.appFolder %>/index.html',
@@ -45,7 +60,6 @@ module.exports = function (grunt) {
                                     createConfig: function (context, block) {
                                         var cfg = {files: []},
                                             filesDef = {src: []};
-
                                         context.inFiles.forEach(function (inFile) {
                                             filesDef.src.push(path.join(context.inDir, inFile));
                                         });
@@ -55,18 +69,6 @@ module.exports = function (grunt) {
                                                 'bower_components/angular-mocks/angular-mocks.js',
                                                 'test/unit/<%= globals.appFolder %>/**/*.js'
                                             ],
-                                            preprocessors: {
-                                                '!(bower_components|node_modules|externalJS|test|build)/**/*.js': ['coverage']
-                                            },
-                                            reporters: ['progress', 'coverage', 'html'],
-                                            htmlReporter: {
-                                                'outputFile': 'test/coverage/<%= globals.appFolder %>/units.html'
-                                            },
-                                            coverageReporter: {
-                                                reporters: [
-                                                    {type: ['html'], dir: 'test/coverage/', subdir: '<%= globals.appFolder %>/'},
-                                                    {type: ['json'], dir: 'test/coverage/', subdir: '<%= globals.appFolder %>/'}
-                                                ]}
                                         };
 
                                         context.options.minified = {
@@ -83,28 +85,6 @@ module.exports = function (grunt) {
                                         return cfg;
                                     }
                                 },
-                                {
-                                    name: 'coverage',
-                                    createConfig: function (context, block) {
-                                        var cfg = {files: []};
-
-                                        context.options.options = {
-                                            thresholds: {
-                                                'statements': 90,
-                                                'branches': 90,
-                                                'lines': 90,
-                                                'functions': 90
-                                            },
-                                            dir: 'coverage/<%= globals.appFolder %>',
-                                            root: 'test'
-                                        };
-
-                                        context.outFiles = context.inFiles;
-                                        context.outDir = context.inDir;
-
-                                        return cfg;
-                                    }
-                                },
                                 'concat',
                                 {
                                     name: 'uglify',
@@ -113,7 +93,6 @@ module.exports = function (grunt) {
                                             outfile = path.join('<%= globals.releasePath %>', block.dest),
                                             filesDef = {};
 
-
                                         filesDef.dest = outfile;
                                         filesDef.src = [];
                                         context.inFiles.forEach(function (inFile) {
@@ -121,7 +100,6 @@ module.exports = function (grunt) {
                                         });
 
                                         cfg.files.push(filesDef);
-                                        //context.outFiles = [block.dest];
                                         return cfg;
                                     }
                                 }
@@ -134,7 +112,6 @@ module.exports = function (grunt) {
                                             outfile = path.join('<%= globals.releasePath %>', block.dest),
                                             filesDef = {};
 
-
                                         filesDef.dest = outfile;
                                         filesDef.src = [];
                                         context.inFiles.forEach(function (inFile) {
@@ -142,7 +119,6 @@ module.exports = function (grunt) {
                                         });
 
                                         cfg.files.push(filesDef);
-                                        //context.outFiles = [block.dest];
                                         return cfg;
                                     }
                                 }],
@@ -182,7 +158,6 @@ module.exports = function (grunt) {
                                     createConfig: function (context, block) {
                                         var cfg = {files: []},
                                             filesDef = {src: []};
-
                                         context.inFiles.forEach(function (inFile) {
                                             filesDef.src.push(path.join(context.inDir, inFile));
                                         });
@@ -191,42 +166,8 @@ module.exports = function (grunt) {
                                             files: [ filesDef.src,
                                                 'bower_components/angular-mocks/angular-mocks.js',
                                                 'test/unit/<%= globals.appFolder %>/**/*.js'
-                                            ],
-                                            preprocessors: {
-                                                '!(bower_components|node_modules|externalJS|test|build)/**/*.js': ['coverage']
-                                            },
-                                            reporters: ['progress', 'coverage', 'html'],
-                                            htmlReporter: {
-                                                'outputFile': 'test/coverage/<%= globals.appFolder %>/units.html'
-                                            },
-                                            coverageReporter: {
-                                                reporters: [
-                                                    {type: ['html'], dir: 'test/coverage/', subdir: '<%= globals.appFolder %>/'},
-                                                    {type: ['json'], dir: 'test/coverage/', subdir: '<%= globals.appFolder %>/'}
-                                                ]}
+                                            ]
                                         };
-                                        context.outFiles = context.inFiles;
-                                        context.outDir = context.inDir;
-
-                                        return cfg;
-                                    }
-                                },
-                                {
-                                    name: 'coverage',
-                                    createConfig: function (context, block) {
-                                        var cfg = {files: []};
-
-                                        context.options.options = {
-                                            thresholds: {
-                                                'statements': 90,
-                                                'branches': 90,
-                                                'lines': 90,
-                                                'functions': 90
-                                            },
-                                            dir: 'coverage/<%= globals.appFolder %>',
-                                            root: 'test'
-                                        };
-
                                         context.outFiles = context.inFiles;
                                         context.outDir = context.inDir;
 
@@ -328,10 +269,8 @@ module.exports = function (grunt) {
         'karma': {
             'options': {
                 'singleRun': true,
-                'reporters': ['progress'],
-
+                'browserNoActivityTimeout': 2000,
                 'frameworks': ['jasmine'],
-
                 'browsers': ['PhantomJS'],
 
                 'plugins': [
@@ -339,8 +278,21 @@ module.exports = function (grunt) {
                     'karma-jasmine',
                     'karma-coverage',
                     'karma-htmlfile-reporter'
-                ]
+                ],
 
+                preprocessors: {
+                    '!(bower_components|node_modules|externalJS|test|build)/**/*.js': ['coverage']
+                },
+                reporters: ['progress', 'coverage', 'html'],
+                htmlReporter: {
+                    'outputFile': 'test/coverage/<%= globals.appFolder %>/units.html'
+                },
+                coverageReporter: {
+                    reporters: [
+                        {type: 'html', dir: 'test/coverage/', subdir: '<%= globals.appFolder %>/'},
+                        {type: 'json', dir: 'test/coverage/', subdir: '<%= globals.appFolder %>/'}
+                    ]
+                }
             }
         },
         clean: {
@@ -352,7 +304,7 @@ module.exports = function (grunt) {
         'clean:release',
         'useminPrepare:release',
         'karma:generated',
-        'coverage:generated',
+        'coverage',
         'concat:generated',
         'uglify:generated',
         'karma:minified',
@@ -365,7 +317,7 @@ module.exports = function (grunt) {
         'clean:debug',
         'useminPrepare:debug',
         'karma:generated',
-        'coverage:generated',
+        'coverage',
         'copy:debug',
         'copy:generated',
         'copy:generatedcss',
@@ -374,7 +326,7 @@ module.exports = function (grunt) {
     grunt.registerTask('test', [
         'useminPrepare:debug',
         'karma:generated',
-        'coverage:generated'
+        'coverage'
     ]);
 
 };

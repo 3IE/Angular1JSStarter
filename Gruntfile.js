@@ -7,7 +7,7 @@ module.exports = function (grunt) {
 	var path = require('path');
 	var globalCfg = {
 		src: {
-			jsFiles: ['app/**/*.js', 'test/{unit,e2e}/**/*.js'],
+			jsFiles: ['{app,starterKitSDK}/**/*.js', 'test/{unit,e2e}/**/*.js'],
 			staticMiscFiles: ['index.html', 'app/**/*.{html,json}', 'app/{img,img-static}/**', 'common/img/**'],
 			staticFontFiles: ['bower_components/bootstrap/dist/fonts/**']
 		},
@@ -42,7 +42,6 @@ module.exports = function (grunt) {
 				jshintrc: '.jshintrc',
 				reporter: require('jshint-stylish')
 			}
-			// uses_defaults: '<%= globalCfg.src.jsFiles %>',
 		},
 		copy: {
 			main: {
@@ -106,16 +105,16 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		// karma: {
-		// 	options: {
-		// 		configFile: 'karma.conf.js',
-		// 	},
-		// 	//continuous integration mode: run tests once in PhantomJS browser.
-		// 	continuous: {
-		// 		singleRun: true,
-		// 		browsers: ['PhantomJS']
-		// 	}
-		// },
+		karma: {
+			options: {
+				configFile: 'karma.conf.js',
+			},
+			//continuous integration mode: run tests once in PhantomJS browser.
+			continuous: {
+				singleRun: true,
+				browsers: ['PhantomJS']
+			}
+		},
 		clean: {
 			public: [
 				'<%= globalCfg.distDir %>/**',
@@ -134,7 +133,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('testing', [
 		'clean',
 		'jshint',
-		// 'karma:continuous',
+		'karma:continuous',
 	]);
 	grunt.registerTask('build', [
 		'testing',

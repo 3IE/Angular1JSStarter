@@ -15,12 +15,12 @@ var app = angular.module('starterKit', [
 ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', 'AnalyticsProvider', function ($stateProvider, $urlRouterProvider, AnalyticsProvider) {
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise('/');
 
         AnalyticsProvider.setAccount([
             {
                 tracker: 'UA-12345-12',
-                name: "tracker1",
+                name: 'tracker1',
                 cookieConfig: {
                     cookieDomain: 'foo.example.com',
                     cookieName: 'myNewName',

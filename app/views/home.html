@@ -4,11 +4,11 @@
    <form name="test" ng-submit="test.$valid && send()">
        <input type="text" name="name" required ui-validate="{valid: 'isValid($value)'}" ng-model="user.name" />
        <span ng-show="test.name.$error.required && submit" >Nom obligatoire</span>
-       <span ng-show="test.name.$error.valid && !test.name.$error.required " > {{errors.invalid_name}} </span>
+       <span ng-show="test.name.$error.valid && !test.name.$error.required " > {{errors.invalidName}} </span>
        <input type="submit" ng-click="submit = true">
    </form>
-    <div ng-repeat="img in images">
-        <img src="img/{{img}}.jpg"/>
+    <div ng-repeat="img in images" class="ng-cloak">
+        <img src="img-static/{{img}}.jpg"/>
     </div>
 
 </div>

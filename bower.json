@@ -9,7 +9,7 @@
     "angular": "1.4.x",
     "jquery": "2.1.x",
     "angular-mocks": "1.4.x",
-    "angular-bootstrap": "0.13.x",
+    "angular-bootstrap": "0.14.x",
     "angular-ui-router": "0.2.x",
     "bootstrap": "3.3.x",
     "less": "2.5.x",
@@ -17,8 +17,5 @@
     "angular-ui-utils": "3.0.x",
     "angular-sanitize": "1.4.x",
     "angular-google-analytics": "1.0.x"
-  },
-  "resolutions": {
-    "angular": "1.4.x"
   }
 }

@@ -8,7 +8,7 @@ angular.module('starterKit').
     controller('HomeController', ['$scope', 'starterKitAppSDKInterfacesUser', function ($scope, starterKitAppSDKInterfacesUser) {
 
         $scope.errors = {
-            invalid_name: ""
+            invalidName: ''
             };
         $scope.isValid = function(value){
             starterKitAppSDKInterfacesUser.isValid(value)
@@ -16,11 +16,11 @@ angular.module('starterKit').
                     return data;
                 })
                 .catch(function(data){
-                    $scope.errors.invalid_name = 'invalid name WS';
+                    $scope.errors.invalidName = 'invalid name WS';
                     return data;
                 });
         };
-        $scope.images = ["happy1", "happy2"];
+        $scope.images = ['happy1', 'happy2'];
 
 
     }]);

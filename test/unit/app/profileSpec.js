@@ -2,27 +2,27 @@
 
 /* jasmine specs for services go here */
 
-describe("Controller: profile page", function () {
+describe('Controller: profile page', function () {
     //var scope,
     //    httpBackend;
     //
-    //beforeEach(module("starterKit"));
+    //beforeEach(module('starterKit'));
     //
     //
     //beforeEach(inject(function ($controller, $rootScope, $httpBackend) {
     //    scope = $rootScope.$new();
     //    httpBackend = $httpBackend;
     //
-    //    var response = ["Epita", "Epitech"];
+    //    var response = ['Epita', 'Epitech'];
     //
-    //    httpBackend.expectGET("schools.json").respond(response);
+    //    httpBackend.expectGET('schools.json').respond(response);
     //
     //    $controller('ProfileController',
     //        {$scope: scope});
     //    scope.$digest();
     //}));
     //
-    //it("should get school list", function () {
+    //it('should get school list', function () {
     //
     //    httpBackend.flush();
     //

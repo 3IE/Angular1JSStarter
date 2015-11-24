@@ -2,10 +2,10 @@
 
 /* jasmine specs for services go here */
 
-describe("Controller: Navigation Bar", function () {
+describe('Controller: Navigation Bar', function () {
     var scope;
 
-    beforeEach(module("starterKit"));
+    beforeEach(module('starterKit'));
 
 
     beforeEach(inject(function ($controller, $rootScope) {

@@ -1,0 +1,23 @@
+{
+	"globalstrict": true,
+	"camelcase": true,
+	"latedef": true,
+	"newcap": true,
+	"nonew": true,
+	"quotmark": "single",
+	"maxlen": 220,
+	
+	"predef": [
+		"angular",
+		"it",
+		"describe",
+		"browser",
+		"expect",
+		"module",
+		"beforeEach",
+		"element",
+		"by",
+		"inject",
+		"require"
+	]
+}

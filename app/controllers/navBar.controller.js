@@ -8,5 +8,5 @@
 angular.module('starterKit').
     controller('NavBarController', ['$scope', function ($scope) {
         $scope.isCollapsed = true;
-        $scope.pseudo = "BeHappy";
+        $scope.pseudo = 'BeHappy';
     }]);

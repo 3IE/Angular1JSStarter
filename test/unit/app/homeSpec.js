@@ -2,10 +2,10 @@
 
 /* jasmine specs for services go here */
 
-describe("Controller: Home page", function () {
+describe('Controller: Home page', function () {
     var scope;
 
-    beforeEach(module("starterKit"));
+    beforeEach(module('starterKit'));
 
 
     beforeEach(inject(function ($controller, $rootScope) {
@@ -19,7 +19,7 @@ describe("Controller: Home page", function () {
 
     it('should contain a list of images', function() {
 
-        expect(scope.images[0]).toBe("happy1");
+        expect(scope.images[0]).toBe('happy1');
 
     });
 });

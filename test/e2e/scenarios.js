@@ -7,7 +7,7 @@ describe('my app', function() {
   browser.get('index.html');
 
   it('should automatically redirect to /module1 when location hash/fragment is empty', function() {
-    expect(browser.getLocationAbsUrl()).toMatch("/module1");
+    expect(browser.getLocationAbsUrl()).toMatch('/module1');
   });
 
 

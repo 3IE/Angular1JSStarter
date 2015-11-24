@@ -5,11 +5,11 @@
 
 /* jasmine specs for services go here */
 
-describe("Services: Import schools", function () {
+describe('Services: Import schools', function () {
     //var httpBackend,
     //    service;
     //
-    //beforeEach(module("starterKit"));
+    //beforeEach(module('starterKit'));
     //
     //
     //beforeEach(inject(function ($httpBackend, Import) {
@@ -17,12 +17,12 @@ describe("Services: Import schools", function () {
     //    service = Import;
     //}));
     //
-    //it("should get school list", function () {
+    //it('should get school list', function () {
     //
     //    var result = null;
     //
-    //    var response = ["Epita", "Epitech"];
-    //    httpBackend.expectGET("schools.json").respond(response);
+    //    var response = ['Epita', 'Epitech'];
+    //    httpBackend.expectGET('schools.json').respond(response);
     //    service.getSchools().then(function (data) {
     //        result = data;
     //    }, function (reason) {
@@ -38,7 +38,7 @@ describe("Services: Import schools", function () {
     //
     //    var response = 500;
     //
-    //    httpBackend.expectGET("schools.json").respond(response);
+    //    httpBackend.expectGET('schools.json').respond(response);
     //
     //    service.getSchools().then(function (data) {
     //        result = data;

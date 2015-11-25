@@ -11,7 +11,7 @@ module.exports = function (grunt) {
 			staticMiscFiles: ['index.html', 'app/**/*.{html,json}', 'app/{img,img-static}/**', 'common/img/**'],
 			staticFontFiles: ['bower_components/bootstrap/dist/fonts/**']
 		},
-		distDir: 'dist/'
+		distDir: 'dist'
 	};
 	
 	//less config function for usemin
@@ -86,18 +86,22 @@ module.exports = function (grunt) {
 				algorithm: 'md5',
 				length: 8
 			},
-			images: {
-				//we do process the "img-static" folder because the files inside must keep a static path
-				src: ['<%= globalCfg.distDir %>/app/img/**/*', '<%= globalCfg.distDir %>/common/img/**/*']
-			},
-			js: { src: '<%= globalCfg.distDir %>/app/js/**/*' },
-			css: { src: '<%= globalCfg.distDir %>/app/css/**/*' }
+			//we do not process the "img-static" folder because the files inside must keep a static path
+			images: { src: '<%= globalCfg.distDir %>/{app,common}/img/**/*' },
+			js: { src: '<%= globalCfg.distDir %>/{app,common}/js/**/*.js' },
+			css: { src: '<%= globalCfg.distDir %>/{app,common}/css/**/*.css' }
 		},
 		usemin: {
 			//html file within which usemin is going to replace the resource references  
 			html: ['<%= globalCfg.distDir %>/app/**/*.html'],
+			js: ['<%= globalCfg.distDir %>/{app,common}/js/**/*.js'],
+			css: ['<%= globalCfg.distDir %>/{app,common}/css/**/*.css'],
 			options: {
-				assetsDirs: ['<%= globalCfg.distDir %>/app', '<%= globalCfg.distDir %>/common'],
+				//we add the css folders as an "asset dir" so that the ressources referenced in it can resolved
+				assetsDirs: [
+					'<%= globalCfg.distDir %>/app', '<%= globalCfg.distDir %>/common',
+					'<%= globalCfg.distDir %>/app/css', '<%= globalCfg.distDir %>/common/css'
+				],
 				blockReplacements: {
 					less: function (block) {
 						return '<link rel="stylesheet" href="' + block.dest + '">';
@@ -138,7 +142,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('build', [
 		'testing',
 		'copy',
-		'useminPrepare',		
+		'useminPrepare',
 		'concat:generated',
 		'cssmin:generated',
 		'less:generated',

@@ -53,7 +53,8 @@
     "phantomjs": "^1.9.18"
   },
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+		"test": "grunt test"
   },
   "dependencies": {}
 }

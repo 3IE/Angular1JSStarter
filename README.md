@@ -39,14 +39,11 @@ $ bower install <nom-du-package> --save-dev
 ```
 
 
-## Tests unitaires et couverture de code ##
+## Tests unitaires ##
 
-Dans cette solution les tests unitaires sont obligatoires pour pouvoir déployer la solution sur un serveur de dev ou de prod.
+Dans cette solution les tests unitaires sont obligatoires pour pouvoir déployer la solution.
 
-Pour les réalisés vous avez accès aux fichiers de tests dans le répertoire test/unit/app/.
-
-*Attention le déploiement ne se fera pas si vous votre couverture de code n'est pas assez haute.
-*
+Pour les réaliser vous avez accès aux fichiers de tests dans le répertoire test/unit/.
 
 ## Commandes utiles ##
 

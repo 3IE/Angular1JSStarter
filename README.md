@@ -1,4 +1,8 @@
-# Javascript WebStarterKit v0.1 #
+# Javascript Angular Starter v0.1 #
+
+Build : [![Build Status](https://travis-ci.org/3IE/AngularStarter.svg)](https://travis-ci.org/3IE/AngularStarter) [![Build status](https://ci.appveyor.com/api/projects/status/xyvd3opvueomvtuj?svg=true)](https://ci.appveyor.com/project/BenoitVerdier/angularstarter)
+
+Dependecies : [![devDependency Status](https://david-dm.org/3IE/AngularStarter/dev-status.svg)](https://david-dm.org/3IE/AngularStarter/#info=devDependencies)  
 
 ## Installation ##
 ### Les prérequis sont: ###
@@ -20,10 +24,6 @@ npm install
 
 
 ## Développement ##
-
-Maintenant vous pouvez ouvrir le répertoire de la solution dans un IDE comme PhpStorm. vous devriez avoir ça:
-
-![Screen Shot 2014-09-01 at 11.48.05.png](https://bitbucket.org/repo/grR6g6/images/2970151530-Screen%20Shot%202014-09-01%20at%2011.48.05.png)
 
 Tous les développements doivent être fait dans le répertoire app.
 

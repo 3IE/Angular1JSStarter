@@ -1,4 +1,8 @@
-# Javascript WebStarterKit v0.1 #
+# Javascript Angular Starter v0.1 #
+
+Build : [![Build Status](https://travis-ci.org/3IE/AngularStarter.svg?branch=continuous-integration)](https://travis-ci.org/3IE/AngularStarter) [![Build status](https://ci.appveyor.com/api/projects/status/xyvd3opvueomvtuj?svg=true)](https://ci.appveyor.com/project/BenoitVerdier/angularstarter)
+
+Dependecies : [![devDependency Status](https://david-dm.org/3IE/AngularStarter/dev-status.svg)](https://david-dm.org/3IE/AngularStarter/#info=devDependencies)  
 
 ## Installation ##
 ### Les prérequis sont: ###

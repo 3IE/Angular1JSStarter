@@ -25,10 +25,6 @@ npm install
 
 ## Développement ##
 
-Maintenant vous pouvez ouvrir le répertoire de la solution dans un IDE comme PhpStorm. vous devriez avoir ça:
-
-![Screen Shot 2014-09-01 at 11.48.05.png](https://bitbucket.org/repo/grR6g6/images/2970151530-Screen%20Shot%202014-09-01%20at%2011.48.05.png)
-
 Tous les développements doivent être fait dans le répertoire app.
 
 Pour les composants js externes essayer toujours de les récupérer sur bower et si il n'existe pas dessus alors vous pouvez les installés dans le répertoire externalJS.

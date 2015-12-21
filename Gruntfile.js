@@ -140,7 +140,7 @@ module.exports = function (grunt) {
 		'karma:continuous',
 	]);
 	grunt.registerTask('build', [
-		'testing',
+		'test',
 		'copy',
 		'useminPrepare',
 		'concat:generated',

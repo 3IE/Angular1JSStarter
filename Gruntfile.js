@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 			main: {
 				files: [
 					{ expand: true, src: '<%= globalCfg.src.staticMiscFiles %>', dest: '<%= globalCfg.distDir %>', filter: 'isFile' },
-					{ expand: true, src: '<%= globalCfg.src.staticFontFiles %>', dest: '<%= globalCfg.distDir %>/fonts/', flatten: true, filter: 'isFile' }
+					{ expand: true, src: '<%= globalCfg.src.staticFontFiles %>', dest: '<%= globalCfg.distDir %>/app/fonts/', flatten: true, filter: 'isFile' }
 				],
 			},
 		},

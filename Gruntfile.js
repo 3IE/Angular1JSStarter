@@ -134,6 +134,13 @@ module.exports = function (grunt) {
 		}
 	});
 
+	grunt.registerTask('buildinfo', 'generate buildinfo file', function () {
+		var pkg = grunt.file.readJSON('package.json');
+		var filePath = globalCfg.distDir + '/buildinfo.json';
+		var info = { 'name': pkg.name, 'version': pkg.version, 'build_date': grunt.template.today('yyyy-mm-dd') };
+		grunt.file.write(filePath, JSON.stringify(info));
+		grunt.log.ok(filePath + ' generated');
+	});
 	grunt.registerTask('test', [
 		'clean',
 		'jshint',
@@ -141,6 +148,7 @@ module.exports = function (grunt) {
 	]);
 	grunt.registerTask('build', [
 		'test',
+		'buildinfo',
 		'copy',
 		'useminPrepare',
 		'concat:generated',
